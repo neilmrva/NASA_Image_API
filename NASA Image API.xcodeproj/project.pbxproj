@@ -58,6 +58,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33069AF823CB869C00D65D39 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				330A565623CB7B0D007C1106 /* ViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		33069AF923CB86A500D65D39 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				330A565823CB7B0D007C1106 /* Main.storyboard */,
+				330A565D23CB7B0E007C1106 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		33069AFC23CB875000D65D39 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		33069AFD23CB878D00D65D39 /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
 		330A564623CB7B0C007C1106 = {
 			isa = PBXGroup;
 			children = (
@@ -79,13 +110,14 @@
 		330A565123CB7B0C007C1106 /* NASA Image API */ = {
 			isa = PBXGroup;
 			children = (
+				330A566023CB7B0E007C1106 /* Info.plist */,
 				330A565223CB7B0D007C1106 /* AppDelegate.swift */,
 				330A565423CB7B0D007C1106 /* SceneDelegate.swift */,
-				330A565623CB7B0D007C1106 /* ViewController.swift */,
-				330A565823CB7B0D007C1106 /* Main.storyboard */,
 				330A565B23CB7B0E007C1106 /* Assets.xcassets */,
-				330A565D23CB7B0E007C1106 /* LaunchScreen.storyboard */,
-				330A566023CB7B0E007C1106 /* Info.plist */,
+				33069AFC23CB875000D65D39 /* Models */,
+				33069AFD23CB878D00D65D39 /* Model Controllers */,
+				33069AF823CB869C00D65D39 /* View Controllers */,
+				33069AF923CB86A500D65D39 /* Views */,
 			);
 			path = "NASA Image API";
 			sourceTree = "<group>";
