@@ -15,7 +15,7 @@
 		33069B0623CB991400D65D39 /* NASAImageDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33069B0423CB991400D65D39 /* NASAImageDetail.swift */; };
 		330A565323CB7B0D007C1106 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A565223CB7B0D007C1106 /* AppDelegate.swift */; };
 		330A565523CB7B0D007C1106 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A565423CB7B0D007C1106 /* SceneDelegate.swift */; };
-		330A565723CB7B0D007C1106 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A565623CB7B0D007C1106 /* ViewController.swift */; };
+		330A565723CB7B0D007C1106 /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A565623CB7B0D007C1106 /* ImageCollectionViewController.swift */; };
 		330A565A23CB7B0D007C1106 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330A565823CB7B0D007C1106 /* Main.storyboard */; };
 		330A565C23CB7B0E007C1106 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 330A565B23CB7B0E007C1106 /* Assets.xcassets */; };
 		330A565F23CB7B0E007C1106 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 330A565D23CB7B0E007C1106 /* LaunchScreen.storyboard */; };
@@ -39,7 +39,7 @@
 		330A564F23CB7B0C007C1106 /* NASA Image API.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NASA Image API.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		330A565223CB7B0D007C1106 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		330A565423CB7B0D007C1106 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		330A565623CB7B0D007C1106 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		330A565623CB7B0D007C1106 /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
 		330A565923CB7B0D007C1106 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		330A565B23CB7B0E007C1106 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		330A565E23CB7B0E007C1106 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,7 +70,7 @@
 		33069AF823CB869C00D65D39 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				330A565623CB7B0D007C1106 /* ViewController.swift */,
+				330A565623CB7B0D007C1106 /* ImageCollectionViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -244,7 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				330A565723CB7B0D007C1106 /* ViewController.swift in Sources */,
+				330A565723CB7B0D007C1106 /* ImageCollectionViewController.swift in Sources */,
 				33069B0223CB8EB700D65D39 /* NASAImageDataModelController.swift in Sources */,
 				330A565323CB7B0D007C1106 /* AppDelegate.swift in Sources */,
 				33069B0523CB991400D65D39 /* NASAImageDetail.swift in Sources */,
