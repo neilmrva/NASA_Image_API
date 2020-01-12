@@ -74,10 +74,10 @@ class NASAImageDataModelController
     }
 
     // List to hold all processed image data returned from the API in a clean model
-    var imageDataList:Array<NASAImageDetail>
+    public var imageDataList:Array<NASAImageDetail>
     
     // Helper controller to encapsulate all the network code
-    let networkController:NASAImageAPINetworkController
+    private let networkController:NASAImageAPINetworkController
    
     init()
     {

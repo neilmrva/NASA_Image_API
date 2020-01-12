@@ -2,7 +2,7 @@
 //  NASAImageAPINetworkController.swift
 //  NASA Image API
 //
-//  Created by Development on 1/12/20.
+//  Created by Neil Mrva on 1/12/20.
 //  Copyright © 2020 Neil Mrva. All rights reserved.
 //
 
@@ -10,7 +10,7 @@ import Foundation
 
 class NASAImageAPINetworkController
 {
-    
+    // Makes a network request to the NASA Image Search API and if successful, returns the data to the provided completion handler
     func fetchImageCollectionFromNetwork(completionHandler: @escaping (Data?) -> Void)
     {
         let baseURL = URL(string: "https://images-api.nasa.gov/")!
@@ -18,11 +18,11 @@ class NASAImageAPINetworkController
         // Construct query
         var searchURL = baseURL.appendingPathComponent("search")
         
+        // Let's look for images that were photographed by NASA only
         var components = URLComponents(url: searchURL, resolvingAgainstBaseURL: true)!
         components.queryItems =
         [
             URLQueryItem(name: "media_type", value: "image"),
-            //URLQueryItem(name: "location", value: "Moon")
             URLQueryItem(name: "photographer", value: "NASA")
         ]
         
@@ -46,10 +46,4 @@ class NASAImageAPINetworkController
         task.resume()
     }
 
-    
-    
-    
-    
-    
-    
 }
