@@ -11,8 +11,8 @@ import UIKit
 class ImageDetailViewController: UIViewController
 {
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var titleTextView: UITextView!
+    @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var photographerLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     
@@ -28,11 +28,10 @@ class ImageDetailViewController: UIViewController
     
     override func viewWillAppear(_ animated: Bool)
     {
-//        titleLabel.text = nasaImageDetail.title
-//        descriptionLabel.numberOfLines = 0
-//        descriptionLabel.text = nasaImageDetail.description
-//        photographerLabel.text = nasaImageDetail.photographer
-//        locationLabel.text = nasaImageDetail.location
+        titleTextView.text = nasaImageDetail.title
+        descriptionTextView.text = nasaImageDetail.description
+        photographerLabel.text = nasaImageDetail.photographer
+        locationLabel.text = nasaImageDetail.location
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -42,10 +41,10 @@ class ImageDetailViewController: UIViewController
     
     override func viewWillDisappear(_ animated: Bool)
     {
-//        titleLabel.text = nil
-//        descriptionLabel.text = nil
-//        photographerLabel.text = nil
-//        locationLabel.text = nil
+        titleTextView.text = nil
+        descriptionTextView.text = nil
+        photographerLabel.text = nil
+        locationLabel.text = nil
     }
     
 
