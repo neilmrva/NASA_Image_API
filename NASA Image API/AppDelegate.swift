@@ -11,14 +11,17 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate
 {
-
-
+    // This will get assigned when app starts (iOS 12) - Doesn't seem to work in xcode 11
+    //var window:UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool
     {
         // Override point for customization after application launch.
         
-        _ = NASAImageDataModelController()
+        // Inject dependecy of the NASAImageDataModelController into the initial view controller
+//        let initialController = window?.rootViewController as! UINavigationController
+//        let imageCollectionViewController = initialController.viewControllers.first as! ImageCollectionViewController
+//        imageCollectionViewController.nasaImageDataModelController = NASAImageDataModelController()
         
         return true
     }
@@ -39,6 +42,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
 }
-

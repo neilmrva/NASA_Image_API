@@ -13,6 +13,9 @@
 		33069B0323CB8EB700D65D39 /* NASAImageDataModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33069B0123CB8EB700D65D39 /* NASAImageDataModelController.swift */; };
 		33069B0523CB991400D65D39 /* NASAImageDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33069B0423CB991400D65D39 /* NASAImageDetail.swift */; };
 		33069B0623CB991400D65D39 /* NASAImageDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33069B0423CB991400D65D39 /* NASAImageDetail.swift */; };
+		33069B0B23CC1E8000D65D39 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33069B0A23CC1E8000D65D39 /* ImageCollectionViewCell.swift */; };
+		33069B0D23CC1F3200D65D39 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33069B0C23CC1F3200D65D39 /* ImageDetailViewController.swift */; };
+		33069B0E23CC1F3200D65D39 /* ImageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33069B0C23CC1F3200D65D39 /* ImageDetailViewController.swift */; };
 		330A565323CB7B0D007C1106 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A565223CB7B0D007C1106 /* AppDelegate.swift */; };
 		330A565523CB7B0D007C1106 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A565423CB7B0D007C1106 /* SceneDelegate.swift */; };
 		330A565723CB7B0D007C1106 /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 330A565623CB7B0D007C1106 /* ImageCollectionViewController.swift */; };
@@ -36,6 +39,8 @@
 		33069AFE23CB88DB00D65D39 /* NASAImageAPINetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAImageAPINetworkController.swift; sourceTree = "<group>"; };
 		33069B0123CB8EB700D65D39 /* NASAImageDataModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAImageDataModelController.swift; sourceTree = "<group>"; };
 		33069B0423CB991400D65D39 /* NASAImageDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NASAImageDetail.swift; sourceTree = "<group>"; };
+		33069B0A23CC1E8000D65D39 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		33069B0C23CC1F3200D65D39 /* ImageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailViewController.swift; sourceTree = "<group>"; };
 		330A564F23CB7B0C007C1106 /* NASA Image API.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NASA Image API.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		330A565223CB7B0D007C1106 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		330A565423CB7B0D007C1106 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				330A565623CB7B0D007C1106 /* ImageCollectionViewController.swift */,
+				33069B0C23CC1F3200D65D39 /* ImageDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -78,6 +84,7 @@
 		33069AF923CB86A500D65D39 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				33069B0A23CC1E8000D65D39 /* ImageCollectionViewCell.swift */,
 				330A565823CB7B0D007C1106 /* Main.storyboard */,
 				330A565D23CB7B0E007C1106 /* LaunchScreen.storyboard */,
 			);
@@ -247,9 +254,11 @@
 				330A565723CB7B0D007C1106 /* ImageCollectionViewController.swift in Sources */,
 				33069B0223CB8EB700D65D39 /* NASAImageDataModelController.swift in Sources */,
 				330A565323CB7B0D007C1106 /* AppDelegate.swift in Sources */,
+				33069B0B23CC1E8000D65D39 /* ImageCollectionViewCell.swift in Sources */,
 				33069B0523CB991400D65D39 /* NASAImageDetail.swift in Sources */,
 				330A565523CB7B0D007C1106 /* SceneDelegate.swift in Sources */,
 				33069AFF23CB88DB00D65D39 /* NASAImageAPINetworkController.swift in Sources */,
+				33069B0D23CC1F3200D65D39 /* ImageDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +270,7 @@
 				33069B0623CB991400D65D39 /* NASAImageDetail.swift in Sources */,
 				330A566A23CB7B0E007C1106 /* NASA_Image_APITests.swift in Sources */,
 				33069B0023CB88DB00D65D39 /* NASAImageAPINetworkController.swift in Sources */,
+				33069B0E23CC1F3200D65D39 /* ImageDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

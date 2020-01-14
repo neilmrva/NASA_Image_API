@@ -8,6 +8,11 @@
 
 import Foundation
 
+protocol NASAImageDataModelControllerProtocol:AnyObject
+{
+    func imageCollectionDownloaded()
+}
+
 class NASAImageDataModelController
 {
     // Structure that matches API response at the root and handles the decoding
@@ -78,12 +83,17 @@ class NASAImageDataModelController
     
     // Helper controller to encapsulate all the network code
     private let networkController:NASAImageAPINetworkController
+    
+    public weak var delegate:NASAImageDataModelControllerProtocol?
    
     init()
     {
         imageDataList = Array<NASAImageDetail>()
-        
         networkController = NASAImageAPINetworkController()
+    }
+    
+    public func downloadImageCollection()
+    {
         networkController.fetchImageCollectionFromNetwork(completionHandler: decodeJSONData)
     }
     
@@ -107,11 +117,11 @@ class NASAImageDataModelController
                 for item in responseModel.items
                 {
                     let nasaImageDetail = NASAImageDetail(
-                        imageURL: item.links.first?.href,
-                        title: item.data.first?.title,
-                        description: item.data.first?.description,
-                        photographer: item.data.first?.photographer,
-                        location: item.data.first?.location
+                        imageURL: item.links.first?.href ?? "n/a",
+                        title: item.data.first?.title ?? "n/a",
+                        description: item.data.first?.description ?? "n/a",
+                        photographer: item.data.first?.photographer ?? "n/a",
+                        location: item.data.first?.location ?? "n/a"
                     )
 
                     self.imageDataList.append(nasaImageDetail)
@@ -121,6 +131,8 @@ class NASAImageDataModelController
             {
                 print("decodeJSONData() - Unable to decode JSON")
             }
+            
+            self.delegate?.imageCollectionDownloaded()
         }
     }
 

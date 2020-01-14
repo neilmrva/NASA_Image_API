@@ -10,9 +10,9 @@ import Foundation
 
 struct NASAImageDetail
 {
-    let imageURL:String?
-    let title:String?
-    let description:String?
-    let photographer:String?
-    let location:String?
+    let imageURL:String
+    let title:String
+    let description:String
+    let photographer:String
+    let location:String
 }
