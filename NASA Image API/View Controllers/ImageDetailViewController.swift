@@ -2,7 +2,7 @@
 //  ImageDetailViewController.swift
 //  NASA Image API
 //
-//  Created by Development on 1/12/20.
+//  Created by Neil Mrva on 1/12/20.
 //  Copyright © 2020 Neil Mrva. All rights reserved.
 //
 
@@ -16,17 +16,16 @@ class ImageDetailViewController: UIViewController
     @IBOutlet weak var photographerLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     
+    // Dependencies that will be passed in when a cell is selected
     var nasaImageDataModelController:NASAImageDataModelController!
     var nasaImageDetail:NASAImageDetail!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        
     }
     
+    // Assign all values and load image before the view appears on screen
     override func viewWillAppear(_ animated: Bool)
     {
         nasaImageDataModelController.fetchImage(url: URL(string: nasaImageDetail.imageURL)!)
@@ -48,11 +47,7 @@ class ImageDetailViewController: UIViewController
         locationLabel.text = nasaImageDetail.location
     }
     
-    override func viewDidAppear(_ animated: Bool)
-    {
-        
-    }
-    
+    // Reset all data on screen when the view begins to unwind
     override func viewWillDisappear(_ animated: Bool)
     {
         self.imageView?.image = nil
@@ -61,16 +56,5 @@ class ImageDetailViewController: UIViewController
         photographerLabel.text = nil
         locationLabel.text = nil
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
