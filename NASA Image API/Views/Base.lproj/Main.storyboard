@@ -31,6 +31,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="7yQ-7f-y1t">
+                                            <rect key="frame" x="40" y="40" width="20" height="20"/>
+                                        </activityIndicatorView>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cg1-bZ-lH7">
                                             <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                             <constraints>
@@ -42,11 +45,14 @@
                                     <constraints>
                                         <constraint firstItem="Cg1-bZ-lH7" firstAttribute="leading" secondItem="k8k-Ao-k2A" secondAttribute="leading" id="LZE-Q6-WK3"/>
                                         <constraint firstItem="Cg1-bZ-lH7" firstAttribute="top" secondItem="k8k-Ao-k2A" secondAttribute="top" id="UEH-y0-f56"/>
+                                        <constraint firstItem="7yQ-7f-y1t" firstAttribute="centerY" secondItem="k8k-Ao-k2A" secondAttribute="centerY" id="cSS-ux-rtH"/>
                                         <constraint firstAttribute="trailing" secondItem="Cg1-bZ-lH7" secondAttribute="trailing" id="ixB-3G-rgm"/>
+                                        <constraint firstItem="7yQ-7f-y1t" firstAttribute="centerX" secondItem="k8k-Ao-k2A" secondAttribute="centerX" id="p1F-Zu-3bU"/>
                                         <constraint firstAttribute="bottom" secondItem="Cg1-bZ-lH7" secondAttribute="bottom" id="udt-di-qC1"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
+                                    <outlet property="activityIndicator" destination="7yQ-7f-y1t" id="jHd-Nm-dgT"/>
                                     <outlet property="imageView" destination="Cg1-bZ-lH7" id="azV-rh-l0j"/>
                                 </connections>
                             </collectionViewCell>

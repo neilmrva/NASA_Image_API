@@ -10,11 +10,11 @@ import UIKit
 
 class ImageDetailViewController: UIViewController
 {
-    @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var titleTextView: UITextView!
-    @IBOutlet weak var descriptionTextView: UITextView!
-    @IBOutlet weak var photographerLabel: UILabel!
-    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var imageView:UIImageView!
+    @IBOutlet weak var titleTextView:UITextView!
+    @IBOutlet weak var descriptionTextView:UITextView!
+    @IBOutlet weak var photographerLabel:UILabel!
+    @IBOutlet weak var locationLabel:UILabel!
     
     // Dependencies that will be passed in when a cell is selected
     var nasaImageDataModelController:NASAImageDataModelController!

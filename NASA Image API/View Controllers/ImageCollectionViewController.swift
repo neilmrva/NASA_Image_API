@@ -35,6 +35,9 @@ class ImageCollectionViewController: UICollectionViewController
         // Retreive the cell and cast it ImageCollectionViewCell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionCell", for: indexPath) as! ImageCollectionViewCell
         
+        // Turn on the activity indicator while the image downloads
+        cell.showActivityIndicator(show: true)
+        
         // Get the current image model for this cell
         let imageDetail = nasaImageDataModelController.imageDataList[indexPath.item]
 
@@ -50,6 +53,7 @@ class ImageCollectionViewController: UICollectionViewController
                     // Let's ensure the cell is being populated with the correct image
                     if let currentIndexPath = self.collectionView.indexPath(for: cell), currentIndexPath == indexPath
                     {
+                        cell.showActivityIndicator(show: false)
                         cell.imageView?.image = image
                     }
                 }

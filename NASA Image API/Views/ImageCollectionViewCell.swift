@@ -10,6 +10,21 @@ import UIKit
 
 class ImageCollectionViewCell:UICollectionViewCell
 {
+    @IBOutlet weak var activityIndicator:UIActivityIndicatorView!
     @IBOutlet weak var imageView:UIImageView!
+    
+    func showActivityIndicator(show:Bool)
+    {
+        if show
+        {
+            activityIndicator.isHidden = false
+            activityIndicator.startAnimating()
+        }
+        else
+        {
+            activityIndicator.stopAnimating()
+            activityIndicator.isHidden = true
+        }
+    }
     
 }

@@ -2,7 +2,7 @@
 //  NASA_Image_APITests.swift
 //  NASA Image APITests
 //
-//  Created by Development on 1/12/20.
+//  Created by Neil Mrva on 1/12/20.
 //  Copyright © 2020 Neil Mrva. All rights reserved.
 //
 
