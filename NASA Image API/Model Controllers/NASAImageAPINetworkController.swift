@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class NASAImageAPINetworkController
 {
@@ -46,7 +47,8 @@ class NASAImageAPINetworkController
         task.resume()
     }
     
-    func fetchImage(url:URL, completionHandler: @escaping (Data?) -> Void)
+    // Makes a network request using the image URL stored inside the image data model and returns a UIImage if successful
+    func fetchImage(url:URL, completionHandler: @escaping (UIImage?) -> Void)
     {
         // Create task and response closure
         // Can optimize this code since it repeats dataTask code in fetchImageCollectionFromNetwork
@@ -58,7 +60,16 @@ class NASAImageAPINetworkController
             {
                 if response.statusCode == 200
                 {
-                    completionHandler(data)
+                    if let data = data
+                    {
+                        // If data is valid, let's create an image and return it
+                        let image = UIImage(data: data)
+                        completionHandler(image)
+                    }
+                    else
+                    {
+                        completionHandler(nil)
+                    }
                 }
             }
         }
