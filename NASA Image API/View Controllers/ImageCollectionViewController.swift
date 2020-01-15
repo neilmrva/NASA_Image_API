@@ -34,24 +34,27 @@ class ImageCollectionViewController: UICollectionViewController
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionCell", for: indexPath)
-      cell.backgroundColor = .black
+      let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCollectionCell", for: indexPath) as! ImageCollectionViewCell
+      //cell.backgroundColor = .black
         
-//        MenuModelController.shared.fetchImage(url: menuItem.imageURL)
-//               {
-//                   (image) in
-//                   
-//                   if let image = image
-//                   {
-//                       DispatchQueue.main.async
-//                       {
-//                           if let currentIndexPath = self.tableView.indexPath(for: cell), currentIndexPath == indexPath
-//                           {
-//                               cell.imageView?.image = image
-//                           }
-//                       }
-//                   }
-//               }
+        
+        let imageDetail = nasaImageDataModelController.imageDataList[indexPath.item]
+        
+        nasaImageDataModelController.fetchImage(url: URL(string: imageDetail.imageURL)!)
+               {
+                   (image) in
+                   
+                   if let image = image
+                   {
+                       DispatchQueue.main.async
+                       {
+                           if let currentIndexPath = self.collectionView.indexPath(for: cell), currentIndexPath == indexPath
+                           {
+                                cell.imageView?.image = image
+                           }
+                       }
+                   }
+               }
         
         
         
@@ -71,13 +74,14 @@ class ImageCollectionViewController: UICollectionViewController
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if segue.identifier == "ImageDetailSegue"
-        {
+        //if segue.identifier == "ImageDetailSegue"
+       // {
             if let imageDetailViewController = segue.destination as? ImageDetailViewController//, let selectedImageDetail = selectedImageDetail
             {
+                imageDetailViewController.nasaImageDataModelController = nasaImageDataModelController
                 imageDetailViewController.nasaImageDetail = selectedImageDetail//nasaImageDataModelController.imageDataList[selectedIndex]
             }
-        }
+        //}
     }
 
 

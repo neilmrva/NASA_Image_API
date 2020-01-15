@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol NASAImageDataModelControllerProtocol:AnyObject
 {
@@ -135,5 +136,71 @@ class NASAImageDataModelController
             self.delegate?.imageCollectionDownloaded()
         }
     }
+    
+    func fetchImage(url:URL, completionHandler: @escaping (UIImage?) -> Void)
+    {
+        // Create task and response closure
+        // Can optimize this code since it repeats dataTask code in fetchImageCollectionFromNetwork
+        let task = URLSession.shared.dataTask(with: url)
+        {
+            (data, response, error) in
+
+            if let data = data
+            {
+                let image = UIImage(data: data)
+                completionHandler(image)
+            }
+            else
+            {
+                completionHandler(nil)
+            }
+        }
+
+        task.resume()
+    }
+    
+//    public func downloadImage() -> Data?
+//    {
+//        return nil
+//    }
+//
+//    // A completion handler used to decode the image data returned from the network controller
+//    private func decodeImageData(_ data:Data?)
+//    {
+//        // Ensure we received data
+//        guard let data = data
+//        else
+//        {
+//            print("decodeImageData() - No data returned from server")
+//            return
+//        }
+//
+//        // Perform decoding on background thread in case of many results
+//        DispatchQueue.main.async
+//        {
+//            let jsonDecoder = JSONDecoder()
+//            if let responseModel = try? jsonDecoder.decode(ResponseModel.self, from: data)
+//            {
+//                for item in responseModel.items
+//                {
+//                    let nasaImageDetail = NASAImageDetail(
+//                        imageURL: item.links.first?.href ?? "n/a",
+//                        title: item.data.first?.title ?? "n/a",
+//                        description: item.data.first?.description ?? "n/a",
+//                        photographer: item.data.first?.photographer ?? "n/a",
+//                        location: item.data.first?.location ?? "n/a"
+//                    )
+//
+//                    self.imageDataList.append(nasaImageDetail)
+//                }
+//            }
+//            else
+//            {
+//                print("decodeJSONData() - Unable to decode JSON")
+//            }
+//
+//            self.delegate?.imageCollectionDownloaded()
+//        }
+//    }
 
 }

@@ -45,5 +45,26 @@ class NASAImageAPINetworkController
         // Start network request
         task.resume()
     }
+    
+    func fetchImage(url:URL, completionHandler: @escaping (Data?) -> Void)
+    {
+        // Create task and response closure
+        // Can optimize this code since it repeats dataTask code in fetchImageCollectionFromNetwork
+        let task = URLSession.shared.dataTask(with: url)
+        {
+            (data, response, error) in
+
+            if let response = response as? HTTPURLResponse
+            {
+                if response.statusCode == 200
+                {
+                    completionHandler(data)
+                }
+            }
+        }
+
+        // Start network request
+        task.resume()
+    }
 
 }

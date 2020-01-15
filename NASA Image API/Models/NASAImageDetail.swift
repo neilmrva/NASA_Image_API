@@ -11,6 +11,7 @@ import Foundation
 struct NASAImageDetail
 {
     let imageURL:String
+    var imageData:Data?
     let title:String
     let description:String
     let photographer:String

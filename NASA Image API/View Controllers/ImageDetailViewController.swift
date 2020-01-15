@@ -16,6 +16,7 @@ class ImageDetailViewController: UIViewController
     @IBOutlet weak var photographerLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     
+    var nasaImageDataModelController:NASAImageDataModelController!
     var nasaImageDetail:NASAImageDetail!
     
     override func viewDidLoad()
@@ -28,6 +29,19 @@ class ImageDetailViewController: UIViewController
     
     override func viewWillAppear(_ animated: Bool)
     {
+        nasaImageDataModelController.fetchImage(url: URL(string: nasaImageDetail.imageURL)!)
+        {
+            (image) in
+            
+            if let image = image
+            {
+                DispatchQueue.main.async
+                {
+                    self.imageView?.image = image
+                }
+            }
+        }
+        
         titleTextView.text = nasaImageDetail.title
         descriptionTextView.text = nasaImageDetail.description
         photographerLabel.text = nasaImageDetail.photographer
@@ -41,6 +55,7 @@ class ImageDetailViewController: UIViewController
     
     override func viewWillDisappear(_ animated: Bool)
     {
+        self.imageView?.image = nil
         titleTextView.text = nil
         descriptionTextView.text = nil
         photographerLabel.text = nil
